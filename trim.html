@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <title> Advanced JavaScript Project: trim() </title>
+    <meta charset="utf-8">
+    <script>
+        //string to input
+        var mystring = " This is a test                                                   ";
+
+        //trim(mystring)
+
+        console.log("Input: " + mystring);
+        console.log("[" + trim(mystring) + "]");
+
+        function trim(stringToTrim) {
+           // var str =  stringToTrim;
+
+            // While the first character in the string is whitespace
+           while(stringToTrim.charAt(0) == " ") {
+                //if the first char is whitespace, then extract the rest of the string from position 1, and
+                //set stringToTrim to that value.
+               stringToTrim = stringToTrim.substring(1);
+               //console.log(stringToTrim)
+            }
+
+            // While the last character in the string is whitespace
+            while(stringToTrim.charAt(stringToTrim.length - 1) == " "){
+                //if the last char is whitespace, then extract the string from position 0 to the last character minus 1, then
+                //set stringToTrim to that value.
+                stringToTrim = stringToTrim.substring(0, stringToTrim.length-1);
+            }
+
+            return stringToTrim;
+        }
+
+    </script>
+</head>
+<body>
+</body>
+</html>   
