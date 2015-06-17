@@ -4,18 +4,46 @@
     <title> Advanced JavaScript Project: trim() </title>
     <meta charset="utf-8">
     <script>
-        //string to input
-        var mystring = " This is a test      ";
+        //strings to input
+        var originalstring = "This is a test";
+        var whitespacestring = " This is a test      ";
+        var emptystring = "";
+        var numberstring = 3;
+        var arraystring = [1,2];
+        var nullstring = null;
 
-        console.log("Input: " + mystring);
-        console.log("[" + trim(mystring) + "]");
+
+        //test original string
+        console.log("Input original : " + originalstring);
+        console.log("[" + trim(originalstring) + "]");
+        //test whitespace string
+        console.log("Input whitespace : " + whitespacestring);
+        console.log("[" + trim(whitespacestring) + "]");
+        //test empty string
+        console.log("Input empty: " + emptystring);
+        console.log("[" + trim(emptystring) + "]");
+        //test number string
+        console.log("Input number: " + numberstring);
+        console.log("[" + trim(numberstring) + "]");
+        //test array string
+        console.log("Input array: " + arraystring);
+        console.log("[" + trim(arraystring) + "]");
+        //test null string
+        console.log("Input null: " + nullstring);
+        console.log("[" + trim(nullstring) + "]");
 
         /*
         return the string without leading and trailing whitspace
          */
         function trim(stringToTrim) {
-           // var str =  stringToTrim;
-
+           //
+            if (typeof stringToTrim === 'string') {
+                //if the string is empty set stringToTrim to empty string
+                if (stringToTrim === '') {
+                   stringToTrim = '';
+                }
+            //if the string is not empty..
+            else{
             // While the first character in the string is whitespace
            while(stringToTrim.charAt(0) == " ") {
                 //if the first char is whitespace, then extract the rest of the string from position 1, and
@@ -23,15 +51,21 @@
                stringToTrim = stringToTrim.substring(1);
                //console.log(stringToTrim)
             }
-
             // While the last character in the string is whitespace
             while(stringToTrim.charAt(stringToTrim.length - 1) == " "){
                 //if the last char is whitespace, then extract the string from position 0 to the last character minus 1, then
                 //set stringToTrim to that value.
                 stringToTrim = stringToTrim.substring(0, stringToTrim.length-1);
             }
-
+                }
             return stringToTrim;
+            }
+            //if stringToTrim is any other type set stringToTrim to empty and return that
+            else{
+                stringToTrim = '';
+
+                return stringToTrim;
+            }
         }
 
     </script>
